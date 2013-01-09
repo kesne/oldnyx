@@ -15,9 +15,51 @@
 	background-color: @onyx-scrim-background;
 	opacity: @onyx-scrim-opacity;
 	filter: alpha(opacity=@onyx-scrim-opacity-ie);
+	
+	-webkit-animation: scrim-fade-in 0.5s ease;
+	-moz-animation: scrim-fade-in 0.7s ease;
+	-o-animation: scrim-fade-in 0.5s ease;
+	animation: scrim-fade-in 0.5s ease;
 }
 
 .onyx-scrim.onyx-scrim-transparent {
 	pointer-events: auto;
 	background: transparent;
+}
+
+
+@-webkit-keyframes scrim-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: @onyx-scrim-opacity;
+  }
+}
+
+@-moz-keyframes scrim-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: @onyx-scrim-opacity;
+  }
+}
+
+@-o-keyframes scrim-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: @onyx-scrim-opacity;
+  }
+}
+
+@keyframes scrim-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: @onyx-scrim-opacity;
+  }
 }

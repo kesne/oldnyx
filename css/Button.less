@@ -13,8 +13,7 @@
 	/**/
 	border-radius: @onyx-button-border-radius;
 	/* for IE8 */
-	border: 1px solid (@onyx-button-background * 0.498);
-	border: 1px solid fade((@onyx-button-background * 0.067), 20%);
+	border: 1px solid rgba(0,0,0,0.2);
 	/*
 		The border and the gradient interact in a strange way that
 		causes the bottom-border (top if the gradient is aligned top)
@@ -23,10 +22,13 @@
 		then there are a few rogue pixels that end up very dark.
 	*/
 	/* border-bottom: 1px solid rgba(15, 15, 15, 0.5); */
-	box-shadow: inset 0px 1px 0px rgba(255,255,255,0.2);
+	box-shadow: inset 0px 1px 0px rgba(246,246,246,0.2);
 	/**/
+	/*
 	background: @onyx-button-background @onyx-button-gradient repeat-x bottom;
-	background-size: contain;
+	*/
+	background: @onyx-button-background;
+	.buttonGradient;
 	/**/
 	text-overflow: ellipsis;
 	/* the following cause arcane problems on IE */
@@ -43,17 +45,13 @@
 	the effect is as if .onyx-button.active doesn't exist
 */
 .onyx-button.active {
-	background-image: @onyx-button-active-gradient;
-	background-position: top;
-	border-top: 1px solid rgba(15, 15, 15, 0.6);
-	box-shadow: inset 0px 1px 0px rgba(0,0,0,0.1);
+	border: 1px solid rgba(0,0,0,0.35);
+	box-shadow: inset 0px 1px 10px rgba(0,0,0,0.6);
 }
 
 .onyx-button:active:hover:not([disabled]) {
-	background-image: @onyx-button-active-gradient;
-	background-position: top;
-	border-top: 1px solid rgba(15, 15, 15, 0.6);
-	box-shadow: inset 0px 1px 0px rgba(0,0,0,0.1);
+	border: 1px solid rgba(0,0,0,0.35);
+	box-shadow: inset 0px 1px 10px rgba(0,0,0,0.6);
 }
 
 .onyx-button[disabled] {

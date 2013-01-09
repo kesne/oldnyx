@@ -4,6 +4,16 @@
 	margin: 8px 20px;
 }
 
+.onyx-slider.onyx-progress-bar {
+	height: 4px;
+	margin: 4px;
+	border: 1px solid rgba(15, 15, 15, 0.5);
+}
+
+.onyx-slider .onyx-progress-bar-bar { 
+	background-image: @onyx-gradient-invert;
+}
+
 .onyx-slider-taparea {
 	position: absolute;
 	top: -11px;
@@ -16,7 +26,7 @@
 	height: @onyx-slider-knob-image-height;
 	width: @onyx-slider-knob-image-width;
 	background: @onyx-slider-knob-image left top no-repeat;
-	margin: -23px -20px;
+	margin: -21px -20px;
 }
 
 .onyx-slider-knob.active, .onyx-slider-knob:active:hover {

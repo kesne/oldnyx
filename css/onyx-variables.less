@@ -25,7 +25,7 @@
 @onyx-button-text-color: #292929;
 @onyx-groupbox-text-color: white;
 @onyx-picker-text-color: black;
-@onyx-popup-text-color: white;
+@onyx-popup-text-color: #333;
 @onyx-progressbutton-text-color: #F1F1F1;
 @onyx-radiobutton-active-text-color: white;
 @onyx-text-color: #333333;
@@ -37,33 +37,79 @@
 @onyx-toolbar-text-color: white;
 @onyx-tooltip-text-color: white;
 
+.gradient(@start: #EEE, @stop: #FFF, @cso: 0%, @cst: 100%) {
+  background-image: -webkit-gradient(linear,
+                               left bottom,
+                               left top,
+                               color-stop(@cso, @start),
+                               color-stop(@cst, @stop));
+  background-image: -webkit-linear-gradient(bottom,
+	                           @start @cso,
+	                           @stop @cst);
+							   
+  background-image: -ms-linear-gradient(bottom,
+                                  @start @cso,
+                                  @stop @cst);
+  background-image: -moz-linear-gradient(center bottom,
+                                   @start @cso,
+                                   @stop @cst);
+  background-image: -o-linear-gradient(@stop,
+                                 @start);
+}
+/* Useful for creating top/bottom gradients with a solid middle color. */
+.fades(@bg: #F5F5F5, @top: #EEE, @bottom: #FFF, @tolerence: 25px){
+	background-color: @bg;
+	background: -webkit-linear-gradient(bottom, @bottom, transparent @tolerence), -webkit-linear-gradient(top, @top, @bg @tolerence)
+}
+
+.buttonGradient {
+	
+	@GONE: fade(#e9e9e9, 20%);
+	@GTWO: fade(#c5c5c5, 20%);
+	@GTHREE: fade(#969696, 20%);
+	@GFOUR: fade(#8e8e8e, 20%);
+	@GFIVE: fade(#646464, 20%);
+	@GSIX: fade(#595959, 20%);
+	@GSEVEN: fade(#a0a0a0, 20%);
+	@GEIGHT: fade(#b4b4b4, 20%);
+	@GNINE: fade(#dcdcdc, 20%);
+	
+	background-image: -moz-linear-gradient(top, @GONE, @GTWO 29%, @GTHREE 56%, @GFOUR 60%, @GFIVE 82%, @GSIX 90%, @GEIGHT 97%, @GNINE);
+	background-image: -webkit-gradient(linear, left top, left bottom, from(@GONE), to(@GNINE), color-stop(29%, @GTWO), color-stop(56%, @GTHREE), color-stop(60%, @GFOUR), color-stop(82%, @GFIVE), color-stop(90%, @GSIX), color-stop(97%, @GEIGHT));
+	background-image: -webkit-linear-gradient(top, @GONE, @GTWO 29%, @GTHREE 56%, @GFOUR 60%, @GFIVE 82%, @GSIX 90%, @GEIGHT 97%, @GNINE);
+	background-image: -o-linear-gradient(top, @GONE, @GTWO 29%, @GTHREE 56%, @GFOUR 60%, @GFIVE 82%, @GSIX 90%, @GEIGHT 97%, @GNINE);
+	background-image: linear-gradient(top, @GONE, @GTWO 29%, @GTHREE 56%, @GFOUR 60%, @GFIVE 82%, @GSIX 90%, @GEIGHT 97%, @GNINE);
+}
+
 /* Background Colors */
 /* ---------------------------------------*/
 @onyx-background: #EAEAEA;
 @onyx-light-background: #CACACA;
-@onyx-dark-background: #555656;
+@onyx-dark-background: rgb(111,111,111);
 @onyx-selected-background: #C4E3FE;
 
-@onyx-button-background: #E1E1E1;
+@onyx-button-background: rgba(255, 255, 255, 0.8);
 @onyx-groupbox-background: #4C4C4C;
 @onyx-highlight-background: #DEDFDF;
 @onyx-input-background: transparent;
 @onyx-input-focused-background: white;
-@onyx-menu-item-hover: #284152;
+/*@onyx-menu-item-hover: #CDE7FE;*/
+@onyx-menu-item-hover: #fff;
 @onyx-picker-background: #E1E1E1;
 @onyx-picker-item-background: #cde7fe;
 @onyx-popup-background: #4C4C4C;
-@onyx-progressbar-background: #B8B8B8;
-@onyx-progressbar-bar-background: #58ABEF;
-@onyx-radiobutton-active-background: #0091F2;
+@onyx-progressbar-background: rgba(23,23,23,0.5);
+@onyx-progressbar-bar-background: #1180D2;
+@onyx-radiobutton-active-background: #5897c5;
 @onyx-radiobutton-background: #E7E7E7;
 @onyx-scrim-background: black;
 @onyx-scrim-opacity: 0.65;
 @onyx-switeable-item-background: #EAEAEA;
-@onyx-togglebutton-background: #8BBA3D;
-@onyx-togglebutton-knob-background: #F6F6F6;
+@onyx-togglebutton-background: #5393c2;
+@onyx-togglebutton-knob-background: rgba(255,255,255,0.9);
 @onyx-togglebutton-off-background: #B1B1B1;
-@onyx-toolbar-background: #4C4C4C;
+@onyx-toolbar-background: #ccc;
+@onyx-toolbar-dark-background: #343434;
 @onyx-toolbar-button-background: #555656;
 @onyx-toolbar-input-background: rgba(0, 0, 0, 0.1);
 @onyx-toolbar-input-focused-background: white;
@@ -71,22 +117,23 @@
 
 /* Border Radius */
 /* ---------------------------------------*/
-@onyx-border-radius: 4px;
+@onyx-border-radius-big: 8px;
+@onyx-border-radius: 5px;
 @onyx-border-radius-tight: 3px;
 
-@onyx-button-border-radius: @onyx-border-radius-tight;
-@onyx-groupbox-border-radius: @onyx-border-radius;
-@onyx-input-border-radius: @onyx-border-radius-tight;
-@onyx-menu-border-radius: @onyx-border-radius-tight;
-@onyx-progressbar-border-radius: @onyx-border-radius-tight;
-@onyx-radiobutton-border-radius: @onyx-border-radius-tight;
-@onyx-togglebutton-border-radius: @onyx-border-radius-tight;
+@onyx-button-border-radius: @onyx-border-radius;
+@onyx-groupbox-border-radius: @onyx-border-radius-big;
+@onyx-input-border-radius: @onyx-border-radius-big;
+@onyx-menu-border-radius: @onyx-border-radius;
+@onyx-progressbar-border-radius: @onyx-border-radius;
+@onyx-radiobutton-border-radius: @onyx-border-radius;
+@onyx-togglebutton-border-radius: 6px;
 @onyx-tooltip-border-radius: @onyx-border-radius-tight;
 
 /* Padding */
 /* ---------------------------------------*/
 @onyx-button-padding-lr: 18px;
-@onyx-button-padding-tb: 6px;
+@onyx-button-padding-tb: 8px;
 @onyx-tabbutton-padding-lr: 34px;
 @onyx-tabbutton-padding-tb: 8px;
 

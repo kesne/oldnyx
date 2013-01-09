@@ -8,6 +8,18 @@
 	text-overflow: ellipsis;
 }
 
+.onyx-progress-button.onyx-progress-bar {
+	background-image: none;
+	background: @onyx-progressbar-background;
+	box-shadow: inset 0px 1px 13px rgba(0,0,0,0.6);
+}
+.onyx-progress-button .onyx-progress-bar-bar {
+	box-shadow: inset 0px 1px 0px rgba(246,246,246,0.2), inset -1px 0px 0px rgba(246,246,246,0.2);
+	&:not(.striped){
+		.buttonGradient;
+	};
+}
+
 .onyx-progress-button-bar {
 	height: 36px;
 }

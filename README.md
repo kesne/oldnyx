@@ -4,7 +4,7 @@ Oldnyx is a theme for Enyo 2's Onyx UI Library which aims to bring the visual ap
 
 I started this project because I thought the standard Onyx styles left something to be desired.
 
-###Using
+##Using
 
 You should be able to simply drop the compiled Oldnyx css file into your Onyx CSS folder and have everything work without a problem. We also provide a few additional classes that you can use to customize your existing onyx components.
 
@@ -14,8 +14,11 @@ You should be able to simply drop the compiled Oldnyx css file into your Onyx CS
 ####onyx-header
 While Enyo 1 separated provided a Header kind for applications, Onyx has no such offering. To make a toolbar appear like an Enyo 1 Header, just add the "onyx-header" class.
 
+####onyx-primary
+(TODO) This recreates the primary button found on Enyo 1.
 
-###Issues
+
+##Issues
 
 - Incomplete style set. Not all of Onyx's components have been styled yet.
 - The styles are not as flexible as they should be. Setting your own colors may not work as expected.
@@ -23,10 +26,11 @@ While Enyo 1 separated provided a Header kind for applications, Onyx has no such
 - GroupBoxes with headers rely on the first item having a background color.
 - Dark styles are almost all missing or incomplete.
 
-###Todo
+##Todo
 
 - Try to rework the GroupBox implementation to something a little more flexible.
 - Create dark themes.
 - Fix toolbar backgrounds.
 - Figure out tab button implementation.
 - Finish styling all Onyx components.
+- ToolInput

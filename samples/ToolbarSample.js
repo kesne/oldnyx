@@ -45,7 +45,7 @@ enyo.kind({
 		{tag: "br"},
 
 		{classes: "onyx-sample-divider", content: "More ToolBar"},
-		{kind: "onyx.MoreToolbar", style: "background-color: red;", components: [
+		{kind: "onyx.MoreToolbar", style: "background-color: darkOliveGreen;", classes: "onyx-dark", components: [
 			{kind: "onyx.Grabber"},
 			{content: "Header"},
 			{kind: "onyx.Button", content: "Button"},

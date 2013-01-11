@@ -15,7 +15,7 @@ You should be able to simply drop the compiled Oldnyx css file into your Onyx CS
 While Enyo 1 separated provided a Header kind for applications, Onyx has no such offering. To make a toolbar appear like an Enyo 1 Header, just add the "onyx-header" class.
 
 ####onyx-primary
-(TODO) This recreates the primary button found on Enyo 1.
+This recreates the primary (dark) button color found in Enyo 1.
 
 
 ##Issues

@@ -15,6 +15,22 @@
 	min-width: 0;
 }
 
+/* Dark toolbars change menu button colors, which borks more-toolbar buttons. */
+.onyx-more-toolbar.onyx-dark .onyx-more-menu .onyx-button {
+	color: @onyx-button-text-color;
+	border: 1px solid rgba(0,0,0,0.2);
+	box-shadow: inset 0px 1px 0px rgba(246,246,246,0.2);
+	background: @onyx-button-background;
+	.buttonGradient;
+	
+	&:active:hover:not([disabled]){
+		.onyx-button.active;
+	}
+	&.active {
+		.onyx-button.active;
+	}
+}
+
 .onyx-more-toolbar .onyx-more-menu > * {
 	float: right;
 	clear: both;
